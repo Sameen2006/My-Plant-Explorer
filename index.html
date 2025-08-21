@@ -107,14 +107,84 @@
 
   <script>
     const PLANTS = [
-      { name: "Sunflower", scientificName: "Helianthus annuus", family: "Asteraceae", facts: ["Large flower head with ray florets", "Heliotropic in bud stage", "Attracts pollinators"], image: "https://upload.wikimedia.org/wikipedia/commons/4/40/Sunflower_sky_backdrop.jpg" },
-      { name: "Rose", scientificName: "Rosa spp.", family: "Rosaceae", facts: ["Compound leaves with serrated margins", "Thorny stems", "Fragrant flowers in many colors"], image: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Red_rose.jpg" },
-      { name: "Common Pea", scientificName: "Pisum sativum", family: "Fabaceae", facts: ["Tendrils for climbing", "Zygomorphic flowers", "Fixes nitrogen via root nodules"], image: "https://upload.wikimedia.org/wikipedia/commons/b/b6/Pisum_sativum_pea_pods.jpg" },
-      { name: "Lavender", scientificName: "Lavandula angustifolia", family: "Lamiaceae", facts: ["Square stems typical of mint family", "Opposite aromatic leaves", "Spikes of purple flowers"], image: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Lavandula_angustifolia_Munstead_3zz.jpg" },
-      { name: "Field Daisy", scientificName: "Bellis perennis", family: "Asteraceae", facts: ["Composite flower: disc + ray florets", "Basal rosette of leaves", "Common in lawns"], image: "https://upload.wikimedia.org/wikipedia/commons/5/57/Bellis_perennis_white_%28aka%29.jpg" },
-      { name: "Tomato", scientificName: "Solanum lycopersicum", family: "Solanaceae", facts: ["Yellow star-shaped flowers", "Pinnate leaves with strong smell", "Fuzzy stems"], image: "https://upload.wikimedia.org/wikipedia/commons/8/89/Tomato_je.jpg" },
-      { name: "Sugar Maple", scientificName: "Acer saccharum", family: "Sapindaceae", facts: ["Opposite palmate leaves (5 lobes)", "Produces maple syrup", "Samara (winged) fruits"], image: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Acer_saccharum_20061028_007.jpg" },
-      { name: "English Oak", scientificName: "Quercus robur", family: "Fagaceae", facts: ["Lobed leaves with short petioles", "Produces acorns", "Deep, ridged bark"], image: "https://upload.wikimedia.org/wikipedia/commons/a/a1/Quercus_robur.jpg" }
+      { name: "Sunflower",
+       scientificName: "Helianthus annuus",
+       family: "Asteraceae", 
+       facts: ["Large flower head with ray florets", "Heliotropic in bud stage", "Attracts pollinators"], 
+       image: "https://upload.wikimedia.org/wikipedia/commons/4/40/Sunflower_sky_backdrop.jpg" 
+      },
+      { name: "Rose",
+       scientificName: "Rosa spp.", 
+       family: "Rosaceae",
+       facts: ["Compound leaves with serrated margins", "Thorny stems", "Fragrant flowers in many colors"],
+       image: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Red_rose.jpg" 
+      },
+      { name: "Common Pea",
+       scientificName: "Pisum sativum", 
+       family: "Fabaceae",
+       facts: ["Tendrils for climbing", "Zygomorphic flowers", "Fixes nitrogen via root nodules"], 
+       image: "https://upload.wikimedia.org/wikipedia/commons/b/b6/Pisum_sativum_pea_pods.jpg" 
+      },
+      { name: "Lavender",
+       scientificName: "Lavandula angustifolia", 
+       family: "Lamiaceae",
+       facts: ["Square stems typical of mint family", "Opposite aromatic leaves", "Spikes of purple flowers"],
+       image: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Lavandula_angustifolia_Munstead_3zz.jpg" 
+      },
+      { name: "Field Daisy",
+       scientificName: "Bellis perennis",
+       family: "Asteraceae", 
+       facts: ["Composite flower: disc + ray florets", "Basal rosette of leaves", "Common in lawns"], 
+       image: "https://upload.wikimedia.org/wikipedia/commons/5/57/Bellis_perennis_white_%28aka%29.jpg"
+      },
+      { name: "Tomato",
+       scientificName: "Solanum lycopersicum",
+       family: "Solanaceae", 
+       facts: ["Yellow star-shaped flowers", "Pinnate leaves with strong smell", "Fuzzy stems"], 
+       image: "https://upload.wikimedia.org/wikipedia/commons/8/89/Tomato_je.jpg"
+      },
+      { name: "Sugar Maple",
+       scientificName: "Acer saccharum",
+       family: "Sapindaceae",
+       facts: ["Opposite palmate leaves (5 lobes)", "Produces maple syrup", "Samara (winged) fruits"],
+       image: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Acer_saccharum_20061028_007.jpg" 
+      },
+      { name: "English Oak", 
+       scientificName: "Quercus robur", 
+       family: "Fagaceae", 
+       facts: ["Lobed leaves with short petioles", "Produces acorns", "Deep, ridged bark"], 
+       image: "https://upload.wikimedia.org/wikipedia/commons/a/a1/Quercus_robur.jpg"
+      },
+      { name: "Jade Plant", 
+       scientificName: "Crassula ovata", 
+       family: "Crassulaceae", 
+       facts: ["Succulent with thick leaves", "Often kept as houseplant", "Can live for decades"], 
+       image: "https://upload.wikimedia.org/wikipedia/commons/7/73/Crassula_ovata.jpg"
+      },
+      { name: "Cactus", 
+       scientificName: "Cactaceae spp.", 
+       family: "Cactaceae", 
+       facts: ["Spiny succulent", "Stores water in stems", "Flowers seasonally"],
+       image: "https://upload.wikimedia.org/wikipedia/commons/0/0d/Opuntia_microdasys.jpg" 
+      },
+      { name: "Mexican Snowball", 
+       scientificName: "Echeveria elegans", 
+       family: "Crassulaceae",
+       facts: ["Rosette succulent", "Pale green leaves", "Produces small pink flowers"],
+       image: "https://upload.wikimedia.org/wikipedia/commons/6/6d/Echeveria_elegans_1zz.jpg"
+      },
+      { name: "Asparagus",
+       scientificName: "Asparagus officinalis", 
+       family: "Asparagaceae",
+       facts: ["Edible shoots", "Green feathery foliage", "Perennial vegetable"],
+       image: "https://upload.wikimedia.org/wikipedia/commons/2/27/Asparagus_officinalis_Bundle.jpg" 
+      },
+      { name: "Crown of Thorns", 
+       scientificName: "Euphorbia milii", 
+       family: "Euphorbiaceae", 
+       facts: ["Thorny stems", "Bright red flowers", "Tolerates dry conditions"],
+       image: "https://upload.wikimedia.org/wikipedia/commons/8/84/Euphorbia_milii_01.jpg" 
+      }
     ];
 
     const grid = document.getElementById('grid');
