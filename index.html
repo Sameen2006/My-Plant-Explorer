@@ -11,7 +11,6 @@
       --card: #ffffff;
       --text: #0f172a;
       --muted: #475569;
-      --ring: #9ae6b4;
       --accent: #22c55e;
       --radius: 16px;
     }
@@ -24,7 +23,7 @@
 
     /* ---------- Layout ---------- */
     header {
-      max-width: 1100px; margin: 0 auto; padding: 32px 20px 10px;
+      max-width: 1100px; margin: 0 auto; padding: 24px 20px;
       display: flex; align-items: center; justify-content: space-between; gap: 16px;
     }
     .brand { display: flex; align-items: center; gap: 12px; }
@@ -37,8 +36,8 @@
     .muted { color: var(--muted); font-size: 14px; }
 
     .controls {
-      max-width: 1100px; margin: 0 auto; padding: 0 20px 20px; display: grid; gap: 10px;
-      grid-template-columns: 1fr 220px;
+      max-width: 1100px; margin: 0 auto; padding: 0 20px 24px;
+      display: grid; gap: 12px; grid-template-columns: 1fr 200px;
     }
     @media (max-width: 720px) {
       .controls { grid-template-columns: 1fr; }
@@ -50,18 +49,26 @@
     }
     .input:focus, select:focus { border-color: var(--accent); box-shadow: 0 0 0 4px rgba(34, 197, 94, .15); }
 
-    .grid { max-width: 1100px; margin: 0 auto; padding: 10px 20px 40px;
-      display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+    .grid {
+      max-width: 1100px; margin: 0 auto; padding: 10px 20px 40px;
+      display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
 
     .card {
-      background: var(--card); border-radius: var(--radius); overflow: hidden; border: 1px solid #eef2f7;
-      box-shadow: 0 8px 24px rgba(2, 6, 23, .05);
-      display: flex; flex-direction: column; transition: transform .12s ease, box-shadow .12s ease;
+      background: var(--card); border-radius: var(--radius); overflow: hidden;
+      box-shadow: 0 4px 16px rgba(2, 6, 23, .05);
+      display: flex; flex-direction: column; transition: transform .2s ease, box-shadow .2s ease;
     }
-    .card:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(2, 6, 23, .08); }
+    .card:hover { 
+      transform: translateY(-4px); 
+      box-shadow: 0 12px 24px rgba(2, 6, 23, .08); 
+    }
 
-    .thumb { width: 100%; height: 160px; object-fit: cover; background: #ecfeff; }
-    .content { padding: 14px 14px 16px; display: grid; gap: 10px; }
+    .thumb { 
+      width: 100%; height: 200px; object-fit: cover; background: #ecfeff;
+      border-bottom: 1px solid #eef2f7;
+    }
+    .content { padding: 16px; display: grid; gap: 10px; }
     .name { margin: 0; font-size: 18px; }
     .sci { margin: -6px 0 0; font-style: italic; color: var(--muted); font-size: 14px; }
     .meta { font-size: 13px; color: var(--muted); }
@@ -95,110 +102,60 @@
   <main id="grid" class="grid" aria-live="polite"></main>
 
   <footer>
-    <!-- HOW TO ADD YOUR OWN PLANTS
-      1) Scroll to the script tag below and find the PLANTS array.
-      2) Duplicate an object and change the fields: name, scientificName, family, facts (array of strings), image (URL or path).
-      3) To use your own images, create an "images" folder in your repo, upload JPG/PNG files, and set image: "images/your-file.jpg".
-      4) Commit changes – GitHub Pages updates your live site.
-    -->
     Built with plain HTML/CSS/JS. No build step required. Drop this single file in a GitHub repo and enable GitHub Pages.
   </footer>
 
   <script>
-    // ---------- DATA — add your plants here ----------
-    // Tip: Keep facts short. You can paste image URLs from Wikimedia/Unsplash, or use local files like "images/rose.jpg".
     const PLANTS = [
-      {
-        name: "Sunflower",
+      { name: "Sunflower",
         scientificName: "Helianthus annuus",
         family: "Asteraceae",
-        facts: [
-          "Large flower head with ray florets",
-          "Heliotropic in bud stage",
-          "Attracts pollinators"
-        ],
+        facts: ["Large flower head with ray florets", "Heliotropic in bud stage", "Attracts pollinators"],
         image: "https://upload.wikimedia.org/wikipedia/commons/4/40/Sunflower_sky_backdrop.jpg"
       },
-      {
-        name: "Rose",
+      { name: "Rose",
         scientificName: "Rosa spp.",
         family: "Rosaceae",
-        facts: [
-          "Compound leaves with serrated margins",
-          "Thorny stems",
-          "Fragrant flowers in many colors"
-        ],
-        image: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Red_rose.jpg"
+        facts: ["Compound leaves with serrated margins", "Thorny stems", "Fragrant flowers in many colors"],
+        image: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Red_rose.jpg" 
       },
-      {
-        name: "Common Pea",
+      { name: "Common Pea",
         scientificName: "Pisum sativum",
         family: "Fabaceae",
-        facts: [
-          "Tendrils for climbing",
-          "Zygomorphic flowers",
-          "Fixes nitrogen via root nodules"
-        ],
+        facts: ["Tendrils for climbing", "Zygomorphic flowers", "Fixes nitrogen via root nodules"],
         image: "https://upload.wikimedia.org/wikipedia/commons/b/b6/Pisum_sativum_pea_pods.jpg"
       },
-      {
-        name: "Lavender",
+      { name: "Lavender",
         scientificName: "Lavandula angustifolia",
-        family: "Lamiaceae",
-        facts: [
-          "Square stems typical of mint family",
-          "Opposite aromatic leaves",
-          "Spikes of purple flowers"
-        ],
+        family: "Lamiaceae", 
+        facts: ["Square stems typical of mint family", "Opposite aromatic leaves", "Spikes of purple flowers"],
         image: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Lavandula_angustifolia_Munstead_3zz.jpg"
       },
-      {
-        name: "Field Daisy",
-        scientificName: "Bellis perennis",
+      { name: "Field Daisy", 
+        scientificName: "Bellis perennis", 
         family: "Asteraceae",
-        facts: [
-          "Composite flower: disc + ray florets",
-          "Basal rosette of leaves",
-          "Common in lawns"
-        ],
-        image: "https://upload.wikimedia.org/wikipedia/commons/5/57/Bellis_perennis_white_%28aka%29.jpg"
+        facts: ["Composite flower: disc + ray florets", "Basal rosette of leaves", "Common in lawns"],
+        image: "https://upload.wikimedia.org/wikipedia/commons/5/57/Bellis_perennis_white_%28aka%29.jpg" 
       },
-      {
-        name: "Tomato",
-        scientificName: "Solanum lycopersicum",
+      { name: "Tomato",
+        scientificName: "Solanum lycopersicum", 
         family: "Solanaceae",
-        facts: [
-          "Yellow star-shaped flowers",
-          "Pinnate leaves with strong smell",
-          "Fuzzy stems"
-        ],
-        image: "https://upload.wikimedia.org/wikipedia/commons/8/89/Tomato_je.jpg"
+        facts: ["Yellow star-shaped flowers", "Pinnate leaves with strong smell", "Fuzzy stems"],
+        image: "https://upload.wikimedia.org/wikipedia/commons/8/89/Tomato_je.jpg" 
       },
-      {
-        name: "Sugar Maple",
-        scientificName: "Acer saccharum",
+      { name: "Sugar Maple", 
+        scientificName: "Acer saccharum", 
         family: "Sapindaceae",
-        facts: [
-          "Opposite palmate leaves (5 lobes)",
-          "Produces maple syrup",
-          "Samara (winged) fruits"
-        ],
+        facts: ["Opposite palmate leaves (5 lobes)", "Produces maple syrup", "Samara (winged) fruits"],
         image: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Acer_saccharum_20061028_007.jpg"
       },
-      {
-        name: "English Oak",
-        scientificName: "Quercus robur",
-        family: "Fagaceae",
-        facts: [
-          "Lobed leaves with short petioles",
-          "Produces acorns",
-          "Deep, ridged bark"
-        ],
-        image: "https://upload.wikimedia.org/wikipedia/commons/a/a1/Quercus_robur.jpg"
-      }
+      { name: "English Oak", 
+        scientificName: "Quercus robur", 
+        family: "Fagaceae", 
+        facts: ["Lobed leaves with short petioles", "Produces acorns", "Deep, ridged bark"], 
+        image: "https://upload.wikimedia.org/wikipedia/commons/a/a1/Quercus_robur.jpg" }
     ];
 
-    // ---------- App logic ----------
     const grid = document.getElementById('grid');
     const familySelect = document.getElementById('family');
     const searchInput = document.getElementById('search');
